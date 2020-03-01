@@ -1,0 +1,55 @@
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+
+public class IntegerSetTests {
+    IntegerSet testSet;
+
+    @Before
+    public void setup(){
+        testSet = new   IntegerSet();
+
+    }
+        @Test
+                public void InsertAlreadyThere(){
+                //Check number is already here
+                assertEquals(testSet.size(), 4);
+                assertTrue(testSet.contains(3));
+                //Insert a number
+                 testSet.insert(3);
+                //check the number is in the set
+                assertEquals(testSet.size(), 5);
+                assertTrue(testSet.contains(3));
+        @Test
+                public void RemoveNotThere(){
+                //Check number is not already here.
+                assertEquals(testSet.size(), 5);
+                assertFalse(testSet.contains(3));
+                //Remove a number
+                testSet.remove(3);
+                //Check the number is not in the set
+                assertEquals(testSet.size(), 5);
+                assertFalse(testSet.contains(3));
+        @Test
+                public void RemoveAlreadyThere(){
+                 //Check number is already here
+                 assertEquals(testSet.size(), 3);
+                 assertTrue(testSet.contains(6));
+
+                 // Remove a number
+                  testSet.remove(6);
+                 // Check the number is not the set
+                 assertEquals(testSet.size(), 2);
+                 assertFalse(testSet.contains(6));
+            }
+
+        }
+
+
+    }
+
+
+}
